@@ -1,0 +1,90 @@
+.comp-number-input {
+  text-align: center;
+  user-select: none;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 30px;
+  .count-input {
+    vertical-align: top;
+    display: inline-block;
+    height: 60px;
+    background-color: transparent;
+    outline: none;
+    text-align: center;
+    font-size: 40px;
+    width: 180px;
+    color: #4d5489;
+    border: 1px solid #dadce8;
+
+    &[disabled] {
+      cursor: not-allowed;
+      color: #b6bad1;
+      background-color: #ecedf3;
+    }
+  }
+
+  button {
+    vertical-align: top;
+    display: inline-block;
+    width: 40px;
+    height: 64px;
+    line-height: 40px;
+    font-size: 40px;
+    text-align: center;
+    border: 1px solid #dadce8;;
+    color: #4d5489;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #4d5489;
+      border-color: #4d5489;
+      color: #fff;
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+      background: #dadce8;
+      color: #b6bad1;
+      border-color: #ecedf3;
+
+      &:hover {
+        background: #dadce8;
+      }
+    }
+
+    &.minus {
+      border-right: none;
+      border-radius: 5px 0 0 5px;
+    }
+
+    &.add {
+      border-left: none;
+      border-radius: 0 5px 5px 0;
+    }
+  }
+
+  &.stepper-none {
+    button {
+      display: none;
+    }
+  }
+
+  &.stepper-hover.disabled {
+    // In hover mode, disabled means no stepper
+    button {
+      display: none;
+    }
+  }
+
+  &.stepper-hover {
+    button {
+      opacity: 0;
+    }
+
+    &:hover {
+      button {
+        opacity: 1;
+      }
+    }
+  }
+}
